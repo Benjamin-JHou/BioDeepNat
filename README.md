@@ -1,19 +1,22 @@
 # D-NNCDiscover
-# Collecting Natural Compound Data from FooDB
 
-## Overview
+# Overview 🔍
 
-This repository provides a comprehensive guide and scripts for collecting natural compound data from FooDB, a valuable resource for nutritional and chemical information on various food compounds. The data collection process involves downloading the FooDB MySQL dump file, importing it into a database, and extracting relevant information, specifically the Simplified Molecular Input Line Entry System (SMILES) notation.
+D-NNCDiscover is a deep neural network-based tool designed for exploring natural compounds to discover novel associations with diseases. It combines machine learning and bioinformatics approaches, aiding researchers in gaining deeper insights into the potential of natural compounds in disease research.
 
-## Getting Started
+# Collecting Natural Compound Data from FooDB 📊
+
+This section provides a comprehensive guide and scripts for collecting natural compound data from FooDB, a valuable resource for nutritional and chemical information on various food compounds. The data collection process involves downloading the FooDB MySQL dump file, importing it into a database, and extracting relevant information, specifically the Simplified Molecular Input Line Entry System (SMILES) notation.
+
+## Getting Started 🚀
 
 Follow these steps to collect natural compound data from FooDB:
 
-### Step 1: Download the FooDB MySQL Dump
+### Step 1: Download the FooDB MySQL Dump 📥
 
 Visit the FooDB downloads page at [https://foodb.ca/downloads](https://foodb.ca/downloads) to access the latest FooDB MySQL dump file. Ensure you download the appropriate version.
 
-### Step 2: Import the Dump File
+### Step 2: Import the Dump File 🗃️
 
 1. Decompress the downloaded FooDB MySQL dump file (`foodb_2020_4_7_mysql.tar.gz`).
 
@@ -27,7 +30,7 @@ Visit the FooDB downloads page at [https://foodb.ca/downloads](https://foodb.ca/
    
 replacing [userid], [password], and {path/foodb_server_dump_2020_4_21}.sql with your MySQL credentials and the file path, respectively: mysql -u [userid] -p [password] < {path/foodb_server_dump_2020_4_21}.sql
 
-### Step 3: Extract Data
+### Step 3: Extract Data 📦
 
 Access the foodb database:USE foodb;
 Retrieve unique SMILES notations for compounds with export status and foods marked for export to FooDB:
@@ -40,7 +43,7 @@ Retrieve unique SMILES notations for compounds with export status and foods mark
 
 Download the extracted data in CSV format, saved as moldb_smiles.csv.
 
-## Data Verification and Processing
+# Data Verification and Processing
 
 Post-prediction of the potential natural compounds, a meticulous verification process was initiated by iterating over the Compound Identifiers (CIDs) to extract pertinent information. Particularly, it is imperative to note that the IC50 values were averaged for each natural compound, providing a single IC50 value per compound. Employing mean IC50 values is derived from consistent experimental setups rationale and support from literature. Averaging IC50 values could be considered a pragmatic approach, especially when multiple measurements or replicates are available.
 
@@ -94,11 +97,11 @@ Post-prediction of the potential natural compounds, a meticulous verification pr
     print("Bioactivity data saved to bioactivity_data.csv.")
 
 
-## Citation
+## Citation ✍️
 
 If you use data collected from FooDB in your research, please consider citing FooDB as the data source in your publications. You can find citation information on the FooDB website.
 
-## License
+## License 📄
 
 This repository is provided under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), which allows you to:
 

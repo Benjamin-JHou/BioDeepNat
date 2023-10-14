@@ -1,6 +1,6 @@
-## Testbed for Model Training and Evaluation
+# 📁 Testbed for Model Training and Evaluation 
 
-### Import Necessary Libraries
+## 📚 Import Necessary Libraries 
 
 ```python
 import logging
@@ -15,8 +15,9 @@ from utils import (
     evaluation_multilabel,
 )
 import pandas as pd
-
-## Parameter Setting
+```
+      
+## 🔧 Parameter Setting 
 
 ```python
 X = ['X%d' % i for i in range(1, 1025)]  # fingerprint columns
@@ -59,29 +60,30 @@ tfmodelname = "%s_%s_%.2f_%s_%s_tf%s" % (
     params['tfname'],
 )
 
-## Creating Data Pairs
+```
+## 🔄 Creating Data Pairs 
 
 ```python
 create_glob_set(
     path, X, Y, label, 7000, 7000, nnpairs=0, exceptions=exceptions, exname=exname, testsize=0.1, maxrows=None
 )
 
-
-## Training Cycle
-
-```python
-model, losses, _ = trainCycle(params)
-losses.to_csv("%s_losses.csv" % modelname)
-
-
-## Testing Cycle
+```
+## 🌀 Training Cycle 
 
 ```python
 model, losses, _ = trainCycle(params)
 losses.to_csv("%s_losses.csv" % modelname)
 
+```
+## ✅ Testing Cycle 
 
-## Transfer Learning
+```python
+model, losses, _ = trainCycle(params)
+losses.to_csv("%s_losses.csv" % modelname)
+
+```
+## ➡️ Transfer Learning 
 
 ```python
 create_glob_set(
@@ -91,21 +93,25 @@ create_glob_set(
 model = loadModel("model_%s.pt" % (modelname))
 tmodel, losses, _ = transferTrainCycle(model, params)
 
-# Transfer Testing
+```
+# ✅ Transfer Testing 
 
 ```python
 tmodel = loadModel("model_%s.pt" % (tfmodelname))
 y_proba, y_matrix = tfTestCycle(tmodel, params, saveName=tfmodelname, thresh=0.5, seed=777)
 
 
-## Test Cycle with Different Support (Fewshot)
+```
+## ♻️ Test Cycle with Different Support (Fewshot) 
+
 
 ```python
 model = loadModel("model_%s.pt" % (tfmodelname))
 test_raw = pd.DataFrame()
 support_set = dict()
 
-# Add support from directory
+```
+## 📊 Add support from directory 
 
 ```python
 support_set, test_raw = addSupport(Y, 'FewshotSet', support_set, test_raw, testPerc=0.1)
@@ -114,8 +120,8 @@ model.support_pos = support_set
 y_test = test_raw.loc[:, 'class']
 y_proba, y_matrix = testCycle(model, params, saveName=None, test_raw=test_raw, thresh=0.5)
 
-
-## Cosine Similarity
+```
+## 🧲 Cosine Similarity 
 
 ```python
 from siamese_general_fit import predict_cos
@@ -140,7 +146,9 @@ acc, pre, rec, f1, roc, ap, cf = evaluation_multilabel(y_matrix, multi_ytest, th
 print("acc, pre, rec, f1, roc, ap")
 print(acc, pre, rec, f1, roc, ap)
 
-## Multi-Label Learning
+
+```
+## 🏷️ Multi-Label Learning 
 
 ```python
 path = 'multi_label_data'
@@ -179,7 +187,10 @@ tfmodelname = "%s_%s_%.2f_%s_%s_tf%s" % (
 model, losses, _ = trainCycle(params)
 losses.to_csv("%s_losses.csv" % modelname)
 
-# Single label results
+```
+# 📔 Single label results 
+
+```python
 model = loadModel("model_%s.pt" % (modelname))
 y_proba, y_matrix = testCycle(model, params, saveName=modelname, thresh=0.5, seed=777, noneg=True)
 

@@ -44,19 +44,19 @@ Download the extracted data in CSV format, saved as moldb_smiles.csv.
 
 Post-prediction of the potential natural compounds, a meticulous verification process was initiated by iterating over the Compound Identifiers (CIDs) to extract pertinent information. Particularly, it is imperative to note that the IC50 values were averaged for each natural compound, providing a single IC50 value per compound. Employing mean IC50 values is derived from consistent experimental setups rationale and support from literature. Averaging IC50 values could be considered a pragmatic approach, especially when multiple measurements or replicates are available.
 
-```python
-# Load the data
-try:
+          ```python
+    # Load the data
+    try:
     df = pd.read_csv('NC_CID.csv')  # replace with your filename
-except FileNotFoundError:
+    except FileNotFoundError:
     print("File not found. Please check your filename and path.")
     raise
 
-# Initialize a DataFrame to store bioactivity data
-bioactivity_df = pd.DataFrame()
+    # Initialize a DataFrame to store bioactivity data
+    bioactivity_df = pd.DataFrame()
 
-# Loop through CIDs in the data
-for index, row in df.iterrows():
+    # Loop through CIDs in the data
+    for index, row in df.iterrows():
     cid = str(row['CID'])
     name = row['Name']
     
@@ -89,6 +89,23 @@ for index, row in df.iterrows():
     
     print(f"Data fetched for CID {cid}, Name {name}.")
 
-# Save the bioactivity data to a CSV file
-bioactivity_df.to_csv('bioactivity_data.csv', index=False)
-print("Bioactivity data saved to bioactivity_data.csv.")
+    # Save the bioactivity data to a CSV file
+    bioactivity_df.to_csv('bioactivity_data.csv', index=False)
+    print("Bioactivity data saved to bioactivity_data.csv.")
+
+
+## Citation
+
+If you use data collected from FooDB in your research, please consider citing FooDB as the data source in your publications. You can find citation information on the FooDB website.
+
+## License
+
+This repository is provided under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), which allows you to:
+
+- Use the code for any purpose, including research and commercial projects.
+- Modify and distribute the code, provided that derivative works are also released under the GPL-3.0 license.
+
+For more information about the GPL-3.0 license and its permissions and restrictions, please refer to the [official GNU GPL-3.0 page](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+For more information and updates, please refer to the official FooDB website: [https://foodb.ca/](https://foodb.ca/)
+

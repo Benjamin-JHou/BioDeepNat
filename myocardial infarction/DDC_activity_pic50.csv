@@ -1,0 +1,15 @@
+SMILES,pIC50
+COc1cc(CCCc2cc(C(=CCc3ccc(O)c(OC)c3)c3cc(O)c(OC)cc3O)c(OC)cc2O)ccc1O,4.665546248849069
+COc1cc(CC=C(c2cc(O)c(OC)cc2O)c2c(OC)cc3OC(CCc3c2O)c2ccc(O)c(OC)c2)ccc1O,4.301029995663981
+COc1cc(CCCc2cc(C(CCc3ccc(O)c(OC)c3)c3cc(OC)c(OC)cc3O)c(O)cc2OC)ccc1O,4.0
+COc1cc(CCCc2cc(C(CCc3ccc(O)c(OC)c3)c3cc(OC)c(OC)cc3O)c(OC)cc2O)ccc1O,4.0
+COc1cc(CC=C(c2cc(O)c(OC)cc2O)c2c(OC)cc3OC(CCc3c2O)c2ccc(O)c(O)c2)ccc1O,4.0
+COc1cc(CC=C(c2cc(O)c(OC)cc2O)c2c(OC)cc3OC(CCc3c2O)c2ccc(O)c(O)c2)ccc1O,4.0
+COc1ccc(CCCc2ccc(O)c(OC)c2)c(O)c1,3.6989700043360187
+COc1ccc2CC[C@@H](Oc2c1)c1ccc(O)c(O)c1,3.6989700043360187
+COc1cc(CCCc2ccc(O)cc2OC)ccc1O,3.6989700043360187
+COc1cc(CCCc2ccc(OC)c(O)c2OC)ccc1O,3.6989700043360187
+COc1cc(OC)c2CC[C@@H](Oc2c1)c1ccc(O)c(O)c1,3.6989700043360187
+COc1ccc(C(CCc2ccc(O)c(OC)c2)c2cc(CCCc3ccc(O)c(OC)c3)c(O)cc2OC)c(O)c1,3.6989700043360187
+COc1cc(CCCc2cc(C(CCc3ccc(O)c(OC)c3)c3cc(O)c(OC)cc3OC)c(O)cc2OC)ccc1O,3.6989700043360187
+C[C@](N)(Cc1ccc(O)c(O)c1)C(O)=O,2.9208187539523753

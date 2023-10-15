@@ -72,8 +72,8 @@ write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
 # ✨ Other documentation on interacting compounds
 
-For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the [QSAR documentation](myocardial infarction/preprocess_QSAR.md).
-For more details on screening and predictive analysis of interacting compounds, see [prediction Documentation](myocardial infarction/prediction.md).
+For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the [QSAR documentation](DNNCDiscover/myocardial infarction/preprocess_QSAR.md).
+For more details on screening and predictive analysis of interacting compounds, see [prediction Documentation](DNNCDiscover/myocardial infarction/prediction.md).
 
 # ✅ Data Verification and Processing
 

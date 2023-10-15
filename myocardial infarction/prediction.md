@@ -20,7 +20,7 @@ Ensure your data is in the correct format. The model expects a CSV file with a c
 ```python
 import pandas as pd
 
-data = pd.read_csv("your_data.csv")
+data = pd.read_csv("name_data.csv")
 ```
 ### 2. Feature Extraction
 Convert the SMILES strings to a format suitable for machine learning using feature extraction. This might involve converting the SMILES string to a molecular graph, or some form of vectorization. Ensure you have a function smiles_to_fp to perform this action.

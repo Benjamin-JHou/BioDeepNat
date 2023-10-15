@@ -88,3 +88,99 @@ print(f'R2 Score: {r2_test}')
 print(f'Mean Absolute Error: {mae_test}')
 print(f'Root Mean Squared Error: {rmse_test}')
 ```
+## Visualization
+### ✍️ Predicted vs Experimental pIC50 Chart
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = RandomForestRegressor(random_state=42)
+model.fit(X_train, y_train)
+
+predictions_train = model.predict(X_train)
+predictions_test = model.predict(X_test)
+
+plt.figure(figsize=(8, 8))
+
+sns.scatterplot(x=y_train, y=predictions_train, marker='o', color='blue', alpha=1, label='Train', s=100)
+
+sns.scatterplot(x=y_test, y=predictions_test, marker='^', color='yellow', edgecolor='red', linewidth=0.5, alpha=1, label='Test', s=100)
+
+plt.plot([y.min(), y.max()], 
+         [y.min(), y.max()], 
+         color='black', linestyle='--')
+
+plt.xlabel("Experimental pIC50", fontsize=14, labelpad=10)
+plt.ylabel("Predicted pIC50", fontsize=14, labelpad=10)
+plt.title("Predicted vs Experimental pIC50 values", fontsize=16, pad=10)
+
+plt.legend(fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.5)
+
+plt.savefig('my_plot.png', dpi=300, bbox_inches='tight')
+plt.tight_layout()
+plt.show()
+
+```
+## ✍️ Residual Chart【Residual=Observed−Predicted】
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+residuals_test = y_test - predictions_test
+residuals_train = y_train - predictions_train
+
+plt.figure(figsize=(8, 6))
+
+sns.scatterplot(x=predictions_train, y=residuals_train, marker='o', color='blue', alpha=1, label='Train', s=100)
+
+sns.scatterplot(x=predictions_test, y=residuals_test, marker='^', color='yellow',edgecolor='red', linewidth=0.5, alpha=1, label='Test', s=100)
+
+plt.axhline(y=0, color='red', linestyle='--')
+
+plt.xlabel("Predicted pIC50", fontsize=14, labelpad=10)
+plt.ylabel("Residuals", fontsize=14, labelpad=10)
+plt.title("Residuals of Predicted pIC50 values", fontsize=16, pad=10)
+
+plt.legend(fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.savefig('my_plot.png', dpi=300, bbox_inches='tight')
+plt.tight_layout()
+plt.show()
+```
+## ✍️ Applicability Domain Anaysis
+```python
+for i, name in enumerate(unique_names):
+    mask_train = names_train == name
+    num_total_samples = np.sum(mask_train)
+    num_filtered_samples = np.sum(mask_train & (y_train < 5.0))  # Example condition
+    plt.scatter(X_pca_train[mask_train, 0], X_pca_train[mask_train, 1], color=colors[i], marker=markers[i], 
+                label=f'Train {name} (total: {num_total_samples}, filtered: {num_filtered_samples})', s=73)
+
+for i, name in enumerate(test_in_ad_names):
+    mask_test = (names_test == name) & is_inside_ad
+    num_test_samples = np.sum(mask_test)
+    plt.scatter(X_pca_test[mask_test, 0], X_pca_test[mask_test, 1], color=colors[unique_names.index(name)], 
+                marker=markers[unique_names.index(name)], edgecolors='k', 
+                label=f'Test In AD {name} (total: {num_test_samples})', s=73)
+
+plt.xlabel(f'PC1: {pca.explained_variance_ratio_[0]:.2%} explained variance')
+plt.ylabel(f'PC2: {pca.explained_variance_ratio_[1]:.2%} explained variance')
+plt.title('Applicability Domain Analysis')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+plt.annotate('Note: Samples were filtered based on a pIC50 threshold of 5.0.', 
+             (0,0), (0, -40), xycoords='axes fraction', textcoords='offset points', va='top', fontsize=9)
+
+plt.savefig('my_plot.png', dpi=300, bbox_inches='tight')
+plt.tight_layout()
+plt.show()
+
+
+
+

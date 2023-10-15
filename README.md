@@ -45,7 +45,7 @@ Download the extracted data in CSV format, saved as moldb_smiles.csv.
 
 ### 👋 Step 4: Add fingerprint
 
-```R
+```r
 #install.packages('caret')
 #install.packages('rcdk')
 library(caret)

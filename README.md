@@ -70,7 +70,9 @@ fps.matrix = fingerprint::fp.factor.matrix(fps)
 final <- data.frame(cbind(trans, fps.matrix))
 write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
-# ✨ Other documentation on interacting compounds
+# ✨ Other documentation of model training and interacting compounds analysis
+
+Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md).
 
 For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the [QSAR documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/preprocess_QSAR.md).
 

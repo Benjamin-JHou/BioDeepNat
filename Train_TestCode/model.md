@@ -41,9 +41,9 @@ Save and Load Functions (saveModel & loadModel): Helps in saving and loading the
 To start using this model:
 
 📚 Import necessary libraries.
-⚙️ Define your data and parameters.
+⚙️ Define data and parameters.
 🎉 Initialize the OptNCMiner model.
 🏋️ Train the model using the fit method.
 🔮 Use the predict methods to make predictions on new data.
-💼Save your trained model using saveModel and load it later using loadModel.
+💼 Save trained model using saveModel and load it later using loadModel.
 

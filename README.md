@@ -72,11 +72,23 @@ write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
 # ✨ Other documentation of model training and interacting compounds analysis
 
-Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md).
+**Model Definition**: Dive deep into the structure and intricacies of our neural network model.
+   - [Read about our model here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md)
 
-For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the [QSAR documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/preprocess_QSAR.md).
+**Preprocessing**: Understand how we transform our raw data into a format suitable for model training and inference.
+   - [Check out preprocessing steps here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/preprocess.md)
 
-For more details on screening and predictive analysis of interacting compounds, see [prediction Documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/prediction.md).
+**Utility Functions**: Various helper functions that ease our operations, be it file I/O, logging, or any other utility operations.
+   - [Explore our utilities here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/utils.md)
+
+Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the 
+   - [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md)
+
+For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the 
+   - [QSAR documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/preprocess_QSAR.md)
+
+For more details on screening and predictive analysis of interacting compounds, see 
+   - [prediction Documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/prediction.md)
 
 
 # ✅ Data Verification and Processing

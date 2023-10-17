@@ -2,7 +2,7 @@
 
 # 🔍 Overview 
 
-BioDNet (Bioinformatics & Deep Neural Network Explorer) leverages the power of OptNCMiner, a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
+BioDNet (Bioinformatics & Deep Neural Network Explorer) leverages the power of [OptNCMiner](https://github.com/phytoai/OptNCMiner), a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
 
 # 📊 Collecting Natural Compound Data from FooDB 
 

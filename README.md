@@ -1,8 +1,8 @@
-# DNNCDiscover
+# BioDNet
 
 # 🔍 Overview 
 
-DNNCDiscover is a deep neural network-based tool designed for exploring natural compounds to discover novel associations with diseases. It combines machine learning and bioinformatics approaches, aiding researchers in gaining deeper insights into the potential of natural compounds in disease research.
+BioDNet (Bioinformatics & Deep Neural Network Explorer) leverages the power of OptNCMiner, a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
 
 # 📊 Collecting Natural Compound Data from FooDB 
 

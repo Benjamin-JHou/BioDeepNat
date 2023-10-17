@@ -18,32 +18,67 @@ The OptNCMiner is an advanced neural network model designed for a special kind o
 
 ## 🔧 Key Components 
 
-Initialization (__init__): Initializes the network's parameters and layers.
+This is the main deep learning model class. It is an `nn.Module` class, which means it is meant to be used with PyTorch.
 
-Network (network): Constructs the forward pass of the main network.
+#### Initialization (`__init__`) 🏗️:
+- Defines a deep learning architecture with multiple heads and bodies.
+- Initializes parameters and layers based on given shapes and dropout rates.
 
-Forward (forward): Defines the forward pass of the model. It takes an input x and passes it through the network.
+#### Network (`network`) 🌐:
+- Processes two inputs (`left` and `right`) through the head layers.
+- Combines the outputs based on a given mode (subtract, add, cosine similarity, or concatenation).
 
-Fit (fit): Trains the model. It takes training data, validation data (optional), and various other training hyperparameters.
+#### Forward (`forward`) ➡️:
+- Computes the forward pass of the model.
 
-Predict (predict & predict2 & predict_support): Methods to predict the output for given inputs.
+#### Fit (`fit`) 🏋️:
+- Trains the model using given inputs and targets.
+- Utilizes early stopping and AdamW optimizer as default.
 
-Save and Load Functions (saveModel & loadModel): Helps in saving and loading the model's state.
+#### Predict (`predict`) 🎯:
+- Evaluates the model on a given input.
+
+#### Predict2 (`predict2`) 🎯:
+- Another prediction function that takes separate left and right inputs.
+
+#### Predict Support (`predict_support`) 🎯:
+- Predicts using support network.
+
+## ⚙️ Utility Functions 
+
+#### saveModel (`saveModel`) 💾:
+- Saves the current model state, including support vectors and parameters.
+
+#### loadModel (`loadModel`) 📂:
+- Loads a saved model from a file.
+
+## Main Execution 🚦
+
+When executed as a standalone script, it sets up logging for the module.
+
 
 ## 📝 Tips and Notes 
 
 💡 Make sure the environment variable 'KMP_DUPLICATE_LIB_OK' is set to 'True' to avoid library issues.
+
 💡 The network is flexible. You can easily change the shapes of heads and bodies to fit the complexity of your data.
+
 💡 By default, the model uses the AdamW optimizer and binary cross-entropy loss. However, these can be customized based on your needs.
+
 💡 Training logs are provided for better tracking and debugging.
 
 ## 🚀 Get Started! 
 To start using this model:
 
 📚 Import necessary libraries.
+
 ⚙️ Define data and parameters.
+
 🎉 Initialize the OptNCMiner model.
+
 🏋️ Train the model using the fit method.
+
 🔮 Use the predict methods to make predictions on new data.
+
 💼 Save trained model using saveModel and load it later using loadModel.
 

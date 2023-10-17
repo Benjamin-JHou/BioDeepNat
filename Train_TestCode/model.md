@@ -16,7 +16,7 @@ The OptNCMiner is an advanced neural network model designed for a special kind o
 
 6.Model Save & Load: Easily save the trained model's state and load it back when required. 
 
-## 🔧Key Components 
+## 🔧 Key Components 
 
 Initialization (__init__): Initializes the network's parameters and layers.
 

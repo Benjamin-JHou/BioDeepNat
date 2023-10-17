@@ -1,8 +1,28 @@
-# BioDNet
+# BioDNet (Bioinformatics & Deep Neural Network Explorer)
 
 # 🔍 Overview 
 
-BioDNet (Bioinformatics & Deep Neural Network Explorer) leverages the power of [OptNCMiner](https://github.com/phytoai/OptNCMiner), a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
+BioDNet leverages the power of [OptNCMiner](https://github.com/phytoai/OptNCMiner), a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
+
+# ✨ Other BioDNet documentation of model training and interacting compounds analysis
+
+**Model Definition**: Dive deep into the structure and intricacies of our neural network model.
+   - [Read about model here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md)
+
+**Preprocessing**: Understand how we transform our raw data into a format suitable for model training and inference.
+   - [Check out preprocessing steps here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/preprocess.md)
+
+**Utility Functions**: Various helper functions that ease our operations, be it file I/O, logging, or any other utility operations.
+   - [Explore utilities here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/utils.md)
+
+Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the 
+   - [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md)
+
+For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the 
+   - [QSAR documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/preprocess_QSAR.md)
+
+For more details on screening and predictive analysis of interacting compounds, see 
+   - [prediction Documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/prediction.md)
 
 # 📊 Collecting Natural Compound Data from FooDB 
 
@@ -70,27 +90,6 @@ fps.matrix = fingerprint::fp.factor.matrix(fps)
 final <- data.frame(cbind(trans, fps.matrix))
 write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
-# ✨ Other documentation of model training and interacting compounds analysis
-
-**Model Definition**: Dive deep into the structure and intricacies of our neural network model.
-   - [Read about model here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md)
-
-**Preprocessing**: Understand how we transform our raw data into a format suitable for model training and inference.
-   - [Check out preprocessing steps here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/preprocess.md)
-
-**Utility Functions**: Various helper functions that ease our operations, be it file I/O, logging, or any other utility operations.
-   - [Explore utilities here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/utils.md)
-
-Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the 
-   - [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md)
-
-For further details on the Quantitative Structure-Activity Relationship (QSAR) analysis, please refer to the 
-   - [QSAR documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/preprocess_QSAR.md)
-
-For more details on screening and predictive analysis of interacting compounds, see 
-   - [prediction Documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/prediction.md)
-
-
 # ✅ Data Verification and Processing
 
 Post-prediction of the potential natural compounds, a meticulous verification process was initiated by iterating over the Compound Identifiers (CIDs) to extract pertinent information. Particularly, it is imperative to note that the IC50 values were averaged for each natural compound, providing a single IC50 value per compound. Employing mean IC50 values is derived from consistent experimental setups rationale and support from literature. Averaging IC50 values could be considered a pragmatic approach, especially when multiple measurements or replicates are available.

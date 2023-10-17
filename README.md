@@ -73,13 +73,13 @@ write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 # ✨ Other documentation of model training and interacting compounds analysis
 
 **Model Definition**: Dive deep into the structure and intricacies of our neural network model.
-   - [Read about our model here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md)
+   - [Read about model here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md)
 
 **Preprocessing**: Understand how we transform our raw data into a format suitable for model training and inference.
    - [Check out preprocessing steps here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/preprocess.md)
 
 **Utility Functions**: Various helper functions that ease our operations, be it file I/O, logging, or any other utility operations.
-   - [Explore our utilities here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/utils.md)
+   - [Explore utilities here](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/utils.md)
 
 Detailed information and examples regarding the testbed utilized for model training and evaluation can be found in the 
    - [Testbed](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestSet/testbed.md)

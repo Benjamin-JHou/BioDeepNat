@@ -4,7 +4,7 @@
 
 BioDeepNat leverages the power of [OptNCMiner](https://github.com/phytoai/OptNCMiner), a tool rooted in deep neural networks. By seamlessly blending machine learning with bioinformatics, BioDNet pioneers in probing natural compounds to unveil groundbreaking associations with diseases. This aids researchers in delving deeper into the untapped potential of natural compounds in the realm of disease research.
 
-![Image text](https://user-images.githubusercontent.com/147773802/276582199-499abef5-1914-40ee-9544-2528836be6e6.png)
+![Image text](https://user-images.githubusercontent.com/147773802/277106083-8fbd5b13-c283-4aff-a9b8-88ffdd288c63.png)
 
 # ✨ Other BioDeepNat documentation of model training and interacting compounds analysis
 

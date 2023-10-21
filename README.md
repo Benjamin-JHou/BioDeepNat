@@ -102,7 +102,7 @@ In our project, we leverage DeepChem to preprocess and model a dataset of chemic
 
 ### 🔑 Key Features of DeepChem Utilized in Our Project:
 
-- Featurization**:
+- Featurization:
 DeepChem offers a variety of featurizers that convert chemical data into a format suitable for machine learning. In our project, we utilize the `CircularFingerprint` featurizer to convert SMILES strings representing chemical compounds into fixed-size vectors that capture the structural and chemical characteristics of each compound.
 
 ```python
@@ -124,6 +124,7 @@ dataset = loader.create_dataset('compounds_pic50.csv')
 
 - Modeling:
 Although DeepChem primarily shines in facilitating deep learning for chemistry, it also supports a variety of scikit-learn models. In our project, we utilize a Random Forest Regressor encapsulated within a DeepChem model wrapper for predicting the pIC50 values.
+
 ```python
 from sklearn.ensemble import RandomForestRegressor
 sklearn_model = RandomForestRegressor()
@@ -132,6 +133,7 @@ model.fit(dataset)
 ```
 - Model Saving and Loading:
 DeepChem's model wrappers provide convenient methods for saving and loading trained models, simplifying the deployment process.
+
 ```python
 import joblib
 # Save model

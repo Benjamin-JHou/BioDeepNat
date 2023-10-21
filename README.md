@@ -94,57 +94,56 @@ write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
 # ✅ Data Verification and Processing
 
-Post-prediction of the potential natural compounds, a meticulous verification process was initiated by iterating over the Compound Identifiers (CIDs) to extract pertinent information. Particularly, it is imperative to note that the IC50 values were averaged for each natural compound, providing a single IC50 value per compound. Employing mean IC50 values is derived from consistent experimental setups rationale and support from literature. Averaging IC50 values could be considered a pragmatic approach, especially when multiple measurements or replicates are available.
+## 🧪 Introducing DeepChem for IC50 Prediction
 
-   ```python
-    # Load the data
-    try:
-    df = pd.read_csv('NC_CID.csv')  # replace with your filename
-    except FileNotFoundError:
-    print("File not found. Please check your filename and path.")
-    raise
+[DeepChem](https://github.com/deepchem/deepchem) is a powerful library that democratizes the use of deep learning for chemistry and drug discovery applications. This library provides an extensive suite of tools for working with chemical informatics, including utilities for loading, transforming, and working with chemical data.
 
-    # Initialize a DataFrame to store bioactivity data
-    bioactivity_df = pd.DataFrame()
+In our project, we leverage DeepChem to preprocess and model a dataset of chemical compounds for the prediction of pIC50 values. IC50 (half maximal inhibitory concentration) is a measure of the potency of a substance in inhibiting a specific biological or biochemical function, making it a crucial metric in drug discovery.
 
-    # Loop through CIDs in the data
-    for index, row in df.iterrows():
-    cid = str(row['CID'])
-    name = row['Name']
-    
-    print(f"Fetching data for CID {cid}, Name {name}...")
-    
-    # Construct the URL for the API request
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/assaysummary/JSON"
-    
-    # Get the data
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # check if the request was successful
-        data = response.json()
-    except requests.RequestException as e:
-        print(f"Failed to fetch data for CID {cid}, Name {name}. Error: {str(e)}")
-        continue
-    
-    # Extract relevant information
-    try:
-        bioactivity_data = data['Table']['Row']
-        temp_df = pd.DataFrame(bioactivity_data)
-        temp_df['Name'] = name  # add a column with the compound name
-        temp_df['CID'] = cid    # add a column with the CID
-        
-        # Append to the main DataFrame
-        bioactivity_df = pd.concat([bioactivity_df, temp_df], ignore_index=True)
-    except KeyError:
-        print(f"No bioactivity data found for CID {cid}, Name {name}.")
-        continue
-    
-    print(f"Data fetched for CID {cid}, Name {name}.")
+### 🔑 Key Features of DeepChem Utilized in Our Project:
 
-    # Save the bioactivity data to a CSV file
-    bioactivity_df.to_csv('bioactivity_data.csv', index=False)
-    print("Bioactivity data saved to bioactivity_data.csv.")
+- Featurization**:
+DeepChem offers a variety of featurizers that convert chemical data into a format suitable for machine learning. In our project, we utilize the `CircularFingerprint` featurizer to convert SMILES strings representing chemical compounds into fixed-size vectors that capture the structural and chemical characteristics of each compound.
+
+```python
+import deepchem as dc
+featurizer = dc.feat.CircularFingerprint(size=1024)
 ```
+
+- Data Loading and Processing:
+We use DeepChem's data loaders to handle the loading and preprocessing of our dataset. This streamlines the process of getting our data ready for modeling.
+
+```python
+loader = dc.data.CSVLoader(
+    tasks=['pIC50'],
+    feature_field='Smiles',
+    featurizer=featurizer
+)
+dataset = loader.create_dataset('compounds_pic50.csv')
+```
+
+- Modeling:
+Although DeepChem primarily shines in facilitating deep learning for chemistry, it also supports a variety of scikit-learn models. In our project, we utilize a Random Forest Regressor encapsulated within a DeepChem model wrapper for predicting the pIC50 values.
+```python
+from sklearn.ensemble import RandomForestRegressor
+sklearn_model = RandomForestRegressor()
+model = dc.models.SklearnModel(sklearn_model)
+model.fit(dataset)
+```
+- Model Saving and Loading:
+DeepChem's model wrappers provide convenient methods for saving and loading trained models, simplifying the deployment process.
+```python
+import joblib
+# Save model
+joblib.dump(sklearn_model, 'model.joblib')
+
+# Load model
+loaded_sklearn_model = joblib.load('model.joblib')
+loaded_model = dc.models.SklearnModel(loaded_sklearn_model)
+```
+Through the utilization of DeepChem, we were able to build a reliable model for predicting pIC50 values, accelerating the pace towards identifying potent compounds for drug discovery. 📚 References: [DeepChem Documentation](https://deepchem.io/tutorials/the-basic-tools-of-the-deep-life-sciences/) [DeepChem GitHub Repository](https://github.com/deepchem/deepchem)
+
+
 ## ✍️ Compound Clustering
 ```python
 import pandas as pd

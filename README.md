@@ -6,6 +6,7 @@ BioDeepNat leverages the power of [OptNCMiner](https://github.com/phytoai/OptNCM
 
 ![Image text](https://user-images.githubusercontent.com/147773802/277106518-0a27e416-9353-4f7b-8154-ed53f883908e.png))
 
+---
 # ✨ Other BioDeepNat documentation of model training and interacting compounds analysis
 
 **Model Definition**: Dive deep into the structure and intricacies of our neural network model.
@@ -26,6 +27,7 @@ For further details on the Quantitative Structure-Activity Relationship (QSAR) a
 For more details on screening and predictive analysis of interacting compounds, see 
    - [prediction Documentation](https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/myocardial%20infarction/prediction.md)
 
+---
 # 📊 Collecting Natural Compound Data from FooDB 
 
 This section provides a comprehensive guide and scripts for collecting natural compound data from FooDB, a valuable resource for nutritional and chemical information on various food compounds. The data collection process involves downloading the FooDB MySQL dump file, importing it into a database, and extracting relevant information, specifically the Simplified Molecular Input Line Entry System (SMILES) notation.
@@ -92,6 +94,7 @@ fps.matrix = fingerprint::fp.factor.matrix(fps)
 final <- data.frame(cbind(trans, fps.matrix))
 write.csv(final, "foodb_compounds_fp.csv",row.names=FALSE)
 ```
+---
 # ✅ Data Verification and Processing
 
 ## 🧪 Introducing DeepChem for IC50 Prediction
@@ -339,11 +342,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-
+---
 # ✍️ Citation 
 
 If you use data collected from FooDB in your research, please consider citing FooDB as the data source in your publications. You can find citation information on the FooDB website.
 
+---
 # 📄 License 
 
 This repository is provided under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), which allows you to:

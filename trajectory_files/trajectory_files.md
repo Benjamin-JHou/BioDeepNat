@@ -15,3 +15,14 @@
 
 ### 📊 Trajectory Data 
 - **Recording Frequency**: Every 10 ps ⏲️
+- [ADCY8_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/ADCY8_trajectory.dcd))
+- [CBX2_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/CBX2_trajectory.dcd))
+- [DDC_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/DDC_trajectory.dcd))
+- [DNAH11_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/DNAH11_trajectory.dcd))
+- [DOCK1_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/DOCK1_trajectory.dcd))
+- [KIFBP_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/KIFBP_trajectory.dcd))
+- [LNX1_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/LNX1_trajectory.dcd))
+- [PPP2R5C_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/PPP2R5C_trajectory.dcd))
+- [RPTOR_trajectory.dcd]([https://github.com/Benjamin-JHou/DNNCDiscover/blob/main/Train_TestCode/model.md](https://github.com/Benjamin-JHou/BioDeepNat/blob/main/trajectory_files/RPTOR_trajectory.dcd))
+
+
